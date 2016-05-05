@@ -21,10 +21,9 @@ public class ScoresActivity extends AppCompatActivity {
         List<Score> scores = db.getAllScores();
         TextView t = (TextView) findViewById(R.id.scores);
         for (Score cn : scores) {
-            String log = "Id: " + cn.get_id() + " ,Player1: " + cn.get_player1()
-                    + " ,Score: " + cn.get_score_player1() + " ,Player2: " + cn.get_player2()
-                    + " ,Score: " + cn.get_score_player2();
-            t.setText(log);
+            String log = cn.get_player1()+ "    " + cn.get_score_player1() + "-" + cn.get_score_player2()
+                    + "    " + cn.get_player2()+"\n";
+            t.append(log);
         }
     }
 }

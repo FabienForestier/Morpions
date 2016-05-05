@@ -16,15 +16,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Database Name
     private static final String DATABASE_NAME = "morpions";
 
-    // Contacts table name
-    private static final String TABLE_SCORE = "scores";
+    // Scores table name
+    private static final String TABLE_SCORE = "scores2";
 
-    // Contacts Table Columns names
+    // Scores Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_PLAYER1  = "player1";
     private static final String KEY_PLAYER2 = "player2";
@@ -40,7 +40,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_SCORE_TABLE = "CREATE TABLE " + TABLE_SCORE + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_PLAYER1 + " TEXT,"
-                + KEY_PLAYER2 + " TEXT,"+ KEY_SCORE_PLAYER1 + " TEXT"+ KEY_SCORE_PLAYER2 + " TEXT"
+                + KEY_PLAYER2 + " TEXT,"+ KEY_SCORE_PLAYER1 + " TEXT," + KEY_SCORE_PLAYER2 + " TEXT"
                 + ")";
         db.execSQL(CREATE_SCORE_TABLE);
     }
@@ -66,7 +66,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_PLAYER1, score.get_player1());
         values.put(KEY_PLAYER2, score.get_player2());
-        values.put(KEY_SCORE_PLAYER1, score.get_score_player1()); // Contact Name
+        values.put(KEY_SCORE_PLAYER1, score.get_score_player1());
         values.put(KEY_SCORE_PLAYER2, score.get_score_player2());
 
         // Inserting Row

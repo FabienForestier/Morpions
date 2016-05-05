@@ -21,6 +21,7 @@ public class GameActivity extends AppCompatActivity {
 
     Button b11,b12,b13,b21,b22,b23,b31,b32,b33;
     String image ="o";
+    DatabaseHandler db = new DatabaseHandler(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -376,7 +377,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void open(View view,String winner) {
-        final DatabaseHandler db = new DatabaseHandler(this);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         String sentence="";
         if(winner.equals("o"))
@@ -420,7 +420,7 @@ public class GameActivity extends AppCompatActivity {
                 TextView p2 = (TextView)findViewById(R.id.Player2_name);
                 TextView s2 = (TextView)findViewById(R.id.scorepl2);
                 db.addScore(new Score(p1.getText().toString(),p2.getText().toString(),s1.getText().toString(),s2.getText().toString()));
-                List<Score> contacts = db.getAllScores();
+                /*List<Score> contacts = db.getAllScores();
 
                 for (Score cn : contacts) {
                     String log = "Id: " + cn.get_id() + " ,Player1: " + cn.get_player1()
@@ -428,7 +428,7 @@ public class GameActivity extends AppCompatActivity {
                             + " ,Score: " + cn.get_score_player2();
                     // Writing Contacts to log
                     Log.d("Name: ", log);
-                }
+                }*/
                 finish();
             }
         });
