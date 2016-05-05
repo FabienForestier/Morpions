@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Morpions</string>
+    <string name="name">Morpions Game</string>
+    <string name="play_btn">PLAY</string>
+    <string name="score_btn">SCORES</string>
+    <string name="player1_legende">Player 1 name</string>
+    <string name="player2_legende">Player 2 name</string>
+    <string name="ready_btn">READY</string>
+    <string name="title_activity_chosename">ChosenameActivity</string>
+    <string name="pl1">Player 1</string>
+    <string name="pl2">Player2</string>
+    <string name="scoreNul">0</string>
+    <string name="x">x</string>
+    <string name="o">o</string>
+</resources>
